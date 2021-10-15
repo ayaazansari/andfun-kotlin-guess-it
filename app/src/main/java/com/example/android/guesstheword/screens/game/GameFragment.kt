@@ -17,11 +17,26 @@
 package com.example.android.guesstheword.screens.game
 
 import android.os.Bundle
+import android.util.Property.of
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders.of
+import androidx.navigation.fragment.NavHostFragment.findNavController
+import com.example.android.guesstheword.R
+import com.example.android.guesstheword.databinding.GameFragmentBinding
+import java.time.chrono.HijrahEra.of
+import java.util.EnumSet.of
+import java.util.List.of
+import java.util.Map.of
+import java.util.Optional.of
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.example.android.guesstheword.R
 import com.example.android.guesstheword.databinding.GameFragmentBinding
@@ -31,6 +46,7 @@ import com.example.android.guesstheword.databinding.GameFragmentBinding
  */
 class GameFragment : Fragment() {
 
+    private lateinit var viewModel:GameViewModel
     // The current word
     private var word = ""
 
@@ -52,6 +68,8 @@ class GameFragment : Fragment() {
                 container,
                 false
         )
+
+        viewModel = ViewModelProvider.of(this).get(GameViewModel::class.java)
 
         resetList()
         nextWord()

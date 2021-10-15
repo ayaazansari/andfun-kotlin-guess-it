@@ -23,8 +23,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.android.guesstheword.R
 import com.example.android.guesstheword.databinding.TitleFragmentBinding
+import com.example.android.guesstheword.screens.score.ScoreFragmentArgs
 
 /**
  * Fragment for the starting or title screen of the app
